@@ -1,3 +1,9 @@
-export default function Comment() {
-  return <h2>Comment</h2>;
+export default function Comment({ comment }) {
+  return (
+    <div>
+      <p>
+        {comment.author}: {comment.comment}
+      </p>
+    </div>
+  );
 }
