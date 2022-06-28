@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { SearchBar, SearchResults } from "../components/videos";
 
 export default function Home() {

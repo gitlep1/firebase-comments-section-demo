@@ -8,7 +8,6 @@ export default function Video() {
   return (
     <main className="App-main">
       <Player videoId={videoId} />
-      <CommentForm videoId={videoId} />
       <CommentFeed videoId={videoId} />
     </main>
   );
