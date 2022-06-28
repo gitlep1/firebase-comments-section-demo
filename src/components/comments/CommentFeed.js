@@ -20,14 +20,13 @@ export default function CommentFeed({ videoId }) {
 
   return (
     <section>
-      {commentDraft && (
-        <CommentForm
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          comment={commentDraft.comment}
-          author={commentDraft.author}
-        />
-      )}
+      <CommentForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        comment={commentDraft.comment}
+        author={commentDraft.author}
+      />
+
       {comments.map((comment, idx) => (
         <Comment key={idx} comment={comment} />
       ))}
