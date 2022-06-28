@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { SearchBar, SearchResults } from "../components/videos";
 
+const formatURL = (query) => {
+  const baseURL = "https://www.googleapis.com/youtube/v3/search";
+  const params = `key=${process.REACT_APP_YOUTUBE_API_KEY}&q=${query}&maxResults=10&part=snippet&type=video`;
+  return `${baseURL}?${params}`;
+};
+
 export default function Home() {
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const fetchVideos = (event) => {
     event.preventDefault();
-    fetch(
-      `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBBEArmjLSYnqJHb-YRZPl-XQnEgVLoe5c&maxResults=10&part=snippet&type=video&q=${query}`
-    )
+    fetch(formatURL(query))
       .then((res) => res.json())
       .then((data) => {
         setSearchResults(data.items);
