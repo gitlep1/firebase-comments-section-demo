@@ -1,0 +1,14 @@
+.videoDescription {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.videoDescription p {
+    align-self: flex-start;
+    text-decoration: none;
+    margin: 0;
+}
