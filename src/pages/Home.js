@@ -3,7 +3,7 @@ import { SearchBar, SearchResults } from "../components/videos";
 
 const formatURL = (query) => {
   const baseURL = "https://www.googleapis.com/youtube/v3/search";
-  const params = `key=${process.REACT_APP_YOUTUBE_API_KEY}&q=${query}&maxResults=10&part=snippet&type=video`;
+  const params = `key=${process.env.REACT_APP_YOUTUBE_API_KEY}&q=${query}&maxResults=10&part=snippet&type=video`;
   return `${baseURL}?${params}`;
 };
 
